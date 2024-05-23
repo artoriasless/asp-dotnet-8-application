@@ -26,50 +26,7 @@
 
 ## what would this repo contains ?
 
-1. 基础的前后端分离的 **web** 应用脚手架，基于 **ABP** 做了身份认证、权限管理
-2. 基于脚手架进行开发的自己的一个 **web** 应用
-
-## about develop plan ...
-
-### milestone 1
-
-- **2024.05.01** 完成基础脚手架搭建
-  1. 包含注册登录和鉴权逻辑
-  2. 前端完成脚手架搭建，可以本地进行开发调试和注册登录
-
-### _to be continued_
-
-## Sln Detail
-
-> 简单介绍说明一下模板项目基础之上的一些自定义模块，以及魔改后的配置，便于二次开发使用
-
-### 数据库表结构初始化 + Migration
-> 如果在项目初期已经完成了数据库表结构设计，快速开发的话，可以直接使用 **`DBContext.database.EnsureCreated()`**，但是从长远角度考虑，还是建议使用项目中最新的 **`migrate`** 版本
->
-> **先大概说明一下整体流程** ： 
->
-> ① 创建 models ，定义模型，映射数据库表
->
-> ② 使用 EF 工具创建相关的 migration 代码（ SQL 语句）
->
-> ③ 项目启动后，会根据 migration ，同步数据库表结构
->
-> 另外提供一点小 tips ：EF calls CreateWebHostBuilder or BuildWebHost without running Main. So Iconfiguration is null.
->
-> 所以在 **`MySqlDBContext`** 的基础之上还有一个 **`Factory`** ，执行 EF 工具的时候会调用该 **`Factory`**
-
-1. 需要安装 **`EF`** 工具：`dotnet tool install --global dotnet-ef`
-2. 添加 **Migrattion**（需要和项目配置文件同目录执行）：`dotnet ef migrations add InitTable --verbose`
-    ```bash
-    建议命名规则：<operateType>_<tableName>_<subOp> ，如果涉及到多个表，或者是初始化，可考虑将表名去掉
-    InitTable
-    UpdateTable_test_addColumnAlias
-    UpdateTable_test_modifyColumnName
-    ```
-3. 在 **Migrations** 目录下有相关的代码，会根据当前最新版本的 **Model** 自动生成相关 SQL 语句
-
-### 其他细节说明
-1. **`Directory.Build.props`** + **`Directory.Build.targets`**
-> DTOs 目录中存放的是和端侧通信的数据结构，考虑到习惯，采用的小驼峰的命名方式
->
-> 但是 c# 中首选且建议用大驼峰作为属性名，所以针对该目录，抑制 IDE1006 的警告
+1. 基于 	**ABP** 的 **.net 8 wasm** 应用
+2. UI 库使用 **Blazorise.AntDesign**
+3. [**UI 库引入使用**](https://blazorise.com/docs)，[**UI 库组件 API**](https://blazorise.com/docs/components)
+4. [**ABP template refer**](./refer.md)

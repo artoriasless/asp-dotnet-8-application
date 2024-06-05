@@ -30,3 +30,11 @@
 2. UI 库使用 **Blazorise.AntDesign**
 3. [**UI 库引入使用**](https://blazorise.com/docs)，[**UI 库组件 API**](https://blazorise.com/docs/components)
 4. [**ABP template refer**](./refer.md)
+
+## Usage
+> 通过 **`ABP CLI`** 创建空白应用模板，推荐指令参数如下：
+>
+> `abp new SlnName -u blazor --dbms mysql  --connection-string "Server=localhost;Port=3306;Database=xxx;Uid=root;Pwd=xxx;"`
+
+1. 数据库迁移
+	+ **ABP** 框架已提供相关的 *migration* 逻辑，只需要启动一下 **`DbMigrator`** 项目即可

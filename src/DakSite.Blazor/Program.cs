@@ -1,6 +1,6 @@
 using System.Threading.Tasks;
 using Blazorise;
-using Blazorise.Bootstrap5;
+using Blazorise.AntDesign;
 using Blazorise.Icons.FontAwesome;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.DependencyInjection;
@@ -25,7 +25,7 @@ public class Program
                {
                    options.Immediate = true;
                })
-               .AddBootstrap5Providers()
+               .AddAntDesignProviders()
                .AddFontAwesomeIcons();
 
         await application.InitializeApplicationAsync(host.Services);

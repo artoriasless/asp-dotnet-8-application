@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Net.Http;
-using Blazorise.Bootstrap5;
 using Blazorise.Icons.FontAwesome;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
@@ -19,6 +18,7 @@ using Volo.Abp.Identity.Blazor.WebAssembly;
 using Volo.Abp.Security.Claims;
 using Volo.Abp.SettingManagement.Blazor.WebAssembly;
 using Volo.Abp.TenantManagement.Blazor.WebAssembly;
+using Blazorise.AntDesign;
 
 namespace DakSite.Blazor;
 
@@ -65,7 +65,7 @@ public class DakSiteBlazorModule : AbpModule
     private void ConfigureBlazorise(ServiceConfigurationContext context)
     {
         context.Services
-            .AddBootstrap5Providers()
+            .AddAntDesignProviders()
             .AddFontAwesomeIcons();
     }
 

@@ -1,4 +1,4 @@
-﻿@page "/"
+﻿@page "/zone"
 @using Volo.Abp.MultiTenancy
 @using DakSite.Blazor.Services
 @inherits DakSiteComponentBase
@@ -8,19 +8,19 @@
 @code {
     protected override async Task OnInitializedAsync()
     {
-        MetaTagService.Set("title", "首页 - title");
-        MetaTagService.Set("description", "首页 - description");
-        MetaTagService.Set("keywords", "首页 - keywords");
+        MetaTagService.Set("title", "个人空间 - title");
+        MetaTagService.Set("description", "个人空间 - description");
+        MetaTagService.Set("keywords", "个人空间 - keywords");
 
         await base.OnInitializedAsync();
     }
 }
 
-<PageTitle>首页</PageTitle>
+<PageTitle>个人空间</PageTitle>
 
 <div class="app-content">
     <Alert Color="Color.Success" Visible>
         <AlertMessage>Blazorise.AntDesign Alert Component</AlertMessage>
-        <AlertDescription>首页</AlertDescription>
+        <AlertDescription>个人空间</AlertDescription>
     </Alert>
 </div>

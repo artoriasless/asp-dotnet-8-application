@@ -1,11 +1,12 @@
 ﻿using AutoMapper;
 
-namespace DakSite.Blazor;
-
-public class DakSiteBlazorAutoMapperProfile : Profile
+namespace DakSite.Blazor
 {
-    public DakSiteBlazorAutoMapperProfile()
+    public class DakSiteBlazorAutoMapperProfile : Profile
     {
-        //Define your AutoMapper configuration here for the Blazor project.
+        public DakSiteBlazorAutoMapperProfile()
+        {
+            //Define your AutoMapper configuration here for the Blazor project.
+        }
     }
 }

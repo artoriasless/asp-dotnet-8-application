@@ -1,35 +1,25 @@
 using System.Threading.Tasks;
-using Blazorise;
-using Blazorise.AntDesign;
-using Blazorise.Icons.FontAwesome;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace DakSite.Blazor;
-
-public class Program
+namespace DakSite.Blazor
 {
-    public async static Task Main(string[] args)
+    public class Program
     {
-        var builder = WebAssemblyHostBuilder.CreateDefault(args);
-
-        var application = await builder.AddApplicationAsync<DakSiteBlazorModule>(options =>
+        public async static Task Main(string[] args)
         {
-            options.UseAutofac();
-        });
+            var builder = WebAssemblyHostBuilder.CreateDefault(args);
 
-        var host = builder.Build();
+            var application = await builder.AddApplicationAsync<DakSiteBlazorModule>(options =>
+            {
+                options.UseAutofac();
+            });
 
-        builder.Services
-               .AddBlazorise(options =>
-               {
-                   options.Immediate = true;
-               })
-               .AddAntDesignProviders()
-               .AddFontAwesomeIcons();
+            var host = builder.Build();
 
-        await application.InitializeApplicationAsync(host.Services);
+            await application.InitializeApplicationAsync(host.Services);
 
-        await host.RunAsync();
+            await host.RunAsync();
+        }
     }
 }

@@ -1,12 +1,13 @@
 ﻿using DakSite.Localization;
 using Volo.Abp.AspNetCore.Components;
 
-namespace DakSite.Blazor;
-
-public abstract class DakSiteComponentBase : AbpComponentBase
+namespace DakSite.Blazor
 {
-    protected DakSiteComponentBase()
+    public abstract class DakSiteComponentBase : AbpComponentBase
     {
-        LocalizationResource = typeof(DakSiteResource);
+        protected DakSiteComponentBase()
+        {
+            LocalizationResource = typeof(DakSiteResource);
+        }
     }
 }
